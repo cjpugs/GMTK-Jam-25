@@ -1,5 +1,8 @@
 extends CanvasLayer
 
+func _ready() -> void:
+	$ColorRect.visible = false
+
 func change_scene(target:String) -> void:
 	$AnimationPlayer.play("fade-to-black")
 	await $AnimationPlayer.animation_finished
