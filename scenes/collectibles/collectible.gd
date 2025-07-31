@@ -18,6 +18,6 @@ func _ready() -> void:
 		add_child(new_model)
 		new_model.name = "Model"
 
-func _on_body_entered(body: Node3D) -> void:
+func _on_body_entered(_body: Node3D) -> void:
 	Globals.score += point_value
 	queue_free()
