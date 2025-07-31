@@ -11,12 +11,24 @@ config_version=5
 [application]
 
 config/name="GMTK-Jam-25"
+run/main_scene="uid://bnmn4sf2cl2s7"
 config/features=PackedStringArray("4.4", "Forward Plus")
 config/icon="res://icon.svg"
 
 [autoload]
 
 Globals="*res://globals/Globals.gd"
+TransitionScreen="*res://scenes/user-interface/transition_screen.tscn"
+
+[display]
+
+window/size/viewport_width=1280
+window/size/viewport_height=720
+window/stretch/mode="canvas_items"
+
+[global_group]
+
+Enemies=""
 
 [input]
 

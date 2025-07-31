@@ -1,3 +1,35 @@
-[gd_scene format=3 uid="uid://cnmcblse6n4sp"]
+[gd_scene load_steps=7 format=3 uid="uid://cnmcblse6n4sp"]
 
-[node name="Customer" type="Node3D"]
+[ext_resource type="Script" uid="uid://jmmcc6swlgwd" path="res://scenes/obstacles/customer.gd" id="1_nqnqc"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_62rwo"]
+radius = 0.404627
+height = 2.68961
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_nqnqc"]
+
+[sub_resource type="CapsuleMesh" id="CapsuleMesh_62rwo"]
+resource_local_to_scene = true
+material = SubResource("StandardMaterial3D_nqnqc")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_llk0y"]
+
+[sub_resource type="SphereMesh" id="SphereMesh_62rwo"]
+resource_local_to_scene = true
+material = SubResource("StandardMaterial3D_llk0y")
+
+[node name="Customer" type="CharacterBody3D"]
+script = ExtResource("1_nqnqc")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.316, 0)
+shape = SubResource("CapsuleShape3D_62rwo")
+
+[node name="Body" type="MeshInstance3D" parent="."]
+transform = Transform3D(0.6, 0, 0, 0, 1, 0, 0, 0, 0.8, 0, 1, 0)
+mesh = SubResource("CapsuleMesh_62rwo")
+
+[node name="Head" type="MeshInstance3D" parent="Body"]
+transform = Transform3D(1, 0, 0, 0, 0.6, 0, 0, 0, 0.75, 0, 1.35572, 0)
+mesh = SubResource("SphereMesh_62rwo")
+skeleton = NodePath("../..")

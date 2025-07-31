@@ -1,0 +1,15 @@
+[gd_scene load_steps=3 format=3 uid="uid://b8xebvewu33yx"]
+
+[ext_resource type="Script" uid="uid://b5dbdj1xudb1q" path="res://scenes/lasso-line/lasso-line.gd" id="1_raabo"]
+
+[sub_resource type="ImmediateMesh" id="ImmediateMesh_raabo"]
+
+[node name="Lasso-line" type="MeshInstance3D" node_paths=PackedStringArray("endpoint")]
+mesh = SubResource("ImmediateMesh_raabo")
+script = ExtResource("1_raabo")
+endpoint = NodePath("Endpoint")
+offset = null
+thickness = null
+points = null
+
+[node name="Endpoint" type="Node3D" parent="."]

@@ -1,0 +1,136 @@
+[gd_scene load_steps=8 format=3 uid="uid://dy1inhyl81gb6"]
+
+[ext_resource type="Script" uid="uid://crjr0pcqarj5n" path="res://scenes/user-interface/game_over.gd" id="1_2q2u7"]
+[ext_resource type="FontFile" uid="uid://c4d40heitles2" path="res://fonts/good timing bd.otf" id="1_pwhf3"]
+[ext_resource type="StyleBox" uid="uid://drda331o5uw4d" path="res://scenes/user-interface/button_styles/button-hover.tres" id="2_q1wkc"]
+[ext_resource type="StyleBox" uid="uid://bfonm1yjbgcup" path="res://scenes/user-interface/button_styles/button-press.tres" id="3_2q2u7"]
+[ext_resource type="StyleBox" uid="uid://bfta57ihj4r1s" path="res://scenes/user-interface/button_styles/button-base.tres" id="3_kma4m"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_uqaic"]
+font = ExtResource("1_pwhf3")
+font_size = 50
+
+[sub_resource type="LabelSettings" id="LabelSettings_q1wkc"]
+font = ExtResource("1_pwhf3")
+font_size = 25
+
+[node name="GameOver" type="CanvasLayer"]
+script = ExtResource("1_2q2u7")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 0.368627)
+
+[node name="Label" type="Label" parent="."]
+anchors_preset = -1
+anchor_left = 0.5
+anchor_top = 0.15
+anchor_right = 0.5
+anchor_bottom = 0.15
+offset_left = -20.0
+offset_right = 20.0
+offset_bottom = 23.0
+grow_horizontal = 2
+text = "Game Over!"
+label_settings = SubResource("LabelSettings_uqaic")
+
+[node name="GridContainer" type="GridContainer" parent="."]
+anchors_preset = -1
+anchor_left = 0.4
+anchor_top = 0.45
+anchor_right = 0.4
+anchor_bottom = 0.45
+offset_left = -20.0
+offset_top = -20.0
+offset_right = 20.0
+offset_bottom = 20.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/h_separation = 50
+theme_override_constants/v_separation = 75
+columns = 2
+
+[node name="ScoreLabel" type="Label" parent="GridContainer"]
+layout_mode = 2
+text = "Score:"
+label_settings = SubResource("LabelSettings_q1wkc")
+horizontal_alignment = 2
+
+[node name="ScoreAmount" type="Label" parent="GridContainer"]
+layout_mode = 2
+text = "##"
+label_settings = SubResource("LabelSettings_q1wkc")
+horizontal_alignment = 1
+
+[node name="ItemsLabel" type="Label" parent="GridContainer"]
+layout_mode = 2
+text = "Items Grabbed:"
+label_settings = SubResource("LabelSettings_q1wkc")
+horizontal_alignment = 2
+
+[node name="ItemsAmount" type="Label" parent="GridContainer"]
+layout_mode = 2
+text = "##"
+label_settings = SubResource("LabelSettings_q1wkc")
+horizontal_alignment = 1
+
+[node name="HBoxContainer" type="HBoxContainer" parent="."]
+anchors_preset = -1
+anchor_left = 0.5
+anchor_top = 0.75
+anchor_right = 0.5
+anchor_bottom = 0.75
+offset_left = -20.0
+offset_top = -40.0
+offset_right = 20.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_constants/separation = 50
+
+[node name="PlayAgain" type="Button" parent="HBoxContainer"]
+layout_mode = 2
+focus_mode = 0
+theme_override_colors/font_hover_color = Color(0.545098, 0.815686, 1, 1)
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_pressed_color = Color(0.362578, 0.503752, 0.852388, 1)
+theme_override_fonts/font = ExtResource("1_pwhf3")
+theme_override_font_sizes/font_size = 30
+theme_override_styles/hover = ExtResource("2_q1wkc")
+theme_override_styles/pressed = ExtResource("3_2q2u7")
+theme_override_styles/normal = ExtResource("3_kma4m")
+text = "Play Again"
+
+[node name="MainMenu" type="Button" parent="HBoxContainer"]
+layout_mode = 2
+focus_mode = 0
+theme_override_colors/font_hover_color = Color(0.545098, 0.815686, 1, 1)
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_pressed_color = Color(0.362578, 0.503752, 0.852388, 1)
+theme_override_fonts/font = ExtResource("1_pwhf3")
+theme_override_font_sizes/font_size = 30
+theme_override_styles/hover = ExtResource("2_q1wkc")
+theme_override_styles/pressed = ExtResource("3_2q2u7")
+theme_override_styles/normal = ExtResource("3_kma4m")
+text = "Main Menu
+"
+
+[node name="Quit" type="Button" parent="HBoxContainer"]
+layout_mode = 2
+focus_mode = 0
+theme_override_colors/font_hover_color = Color(0.545098, 0.815686, 1, 1)
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_pressed_color = Color(0.362578, 0.503752, 0.852388, 1)
+theme_override_fonts/font = ExtResource("1_pwhf3")
+theme_override_font_sizes/font_size = 30
+theme_override_styles/hover = ExtResource("2_q1wkc")
+theme_override_styles/pressed = ExtResource("3_2q2u7")
+theme_override_styles/normal = ExtResource("3_kma4m")
+text = "Quit"
+
+[connection signal="pressed" from="HBoxContainer/PlayAgain" to="." method="_on_play_again_pressed"]
+[connection signal="pressed" from="HBoxContainer/MainMenu" to="." method="_on_main_menu_pressed"]
+[connection signal="pressed" from="HBoxContainer/Quit" to="." method="_on_quit_pressed"]

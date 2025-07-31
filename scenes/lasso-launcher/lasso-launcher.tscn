@@ -1,0 +1,13 @@
+[gd_scene load_steps=3 format=3 uid="uid://dbbnrcnxwaeki"]
+
+[ext_resource type="Script" uid="uid://cfdina8jlyek" path="res://scenes/lasso-launcher/lasso_launcher.gd" id="1_5qf4x"]
+[ext_resource type="PackedScene" uid="uid://b8xebvewu33yx" path="res://scenes/lasso-line/lasso-line.tscn" id="2_3fylu"]
+
+[node name="Lasso-launcher" type="Node3D"]
+script = ExtResource("1_5qf4x")
+
+[node name="Lasso-line" parent="." instance=ExtResource("2_3fylu")]
+visible = false
+offset = Vector3(0, 1, 0)
+thickness = 0.1
+points = 3
