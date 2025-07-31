@@ -48,3 +48,4 @@ shape = SubResource("ConcavePolygonShape3D_qlq2q")
 
 [node name="Collectible" parent="Collectibles" instance=ExtResource("2_qlq2q")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -4.13909)
+collectible_type = "Laptop"

@@ -13,7 +13,7 @@ script = ExtResource("1_lb3xb")
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
 shape = SubResource("SphereShape3D_wahkq")
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+[node name="Model" type="MeshInstance3D" parent="."]
 mesh = SubResource("BoxMesh_lb3xb")
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]
