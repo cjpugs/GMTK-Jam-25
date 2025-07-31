@@ -1,7 +1,6 @@
-[gd_scene load_steps=8 format=3 uid="uid://d1o5ma1mhor6v"]
+[gd_scene load_steps=7 format=3 uid="uid://cs1jpi12r1ya"]
 
 [ext_resource type="PackedScene" uid="uid://yo167f7iyygr" path="res://scenes/player/player.tscn" id="1_tny1j"]
-[ext_resource type="PackedScene" uid="uid://cnmcblse6n4sp" path="res://scenes/obstacles/customer.tscn" id="2_qlq2q"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_tny1j"]
 sky_horizon_color = Color(0.662243, 0.671743, 0.686743, 1)
@@ -43,19 +42,3 @@ skeleton = NodePath("")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Ground/StaticBody3D"]
 shape = SubResource("ConcavePolygonShape3D_qlq2q")
-
-[node name="Customer" parent="." instance=ExtResource("2_qlq2q")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.76445, 3.35941, -4.47874)
-gravity_enabled = true
-
-[node name="Customer2" parent="." instance=ExtResource("2_qlq2q")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.63736, 3.35941, 3.38451)
-gravity_enabled = true
-
-[node name="Customer3" parent="." instance=ExtResource("2_qlq2q")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.15026, 3.35941, 3.81553)
-gravity_enabled = true
-
-[node name="Customer4" parent="." instance=ExtResource("2_qlq2q")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.85182, 3.35941, -3.75447)
-gravity_enabled = true
