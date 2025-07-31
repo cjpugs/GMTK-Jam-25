@@ -14,13 +14,14 @@ height = 2.68961
 script = ExtResource("1_nqnqc")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.31554, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.316, 0)
 shape = SubResource("CapsuleShape3D_62rwo")
 
 [node name="Body" type="MeshInstance3D" parent="."]
-transform = Transform3D(0.6, 0, 0, 0, 1, 0, 0, 0, 0.8, 0, 0, 0)
+transform = Transform3D(0.6, 0, 0, 0, 1, 0, 0, 0, 0.8, 0, 1, 0)
 mesh = SubResource("CapsuleMesh_62rwo")
 
-[node name="Head" type="MeshInstance3D" parent="."]
-transform = Transform3D(0.6, 0, 0, 0, 0.6, 0, 0, 0, 0.6, 0, 1.35572, 0)
+[node name="Head" type="MeshInstance3D" parent="Body"]
+transform = Transform3D(1, 0, 0, 0, 0.6, 0, 0, 0, 0.75, 0, 1.35572, 0)
 mesh = SubResource("SphereMesh_62rwo")
+skeleton = NodePath("../..")
