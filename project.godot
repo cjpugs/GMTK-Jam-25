@@ -13,3 +13,7 @@ config_version=5
 config/name="GMTK-Jam-25"
 config/features=PackedStringArray("4.4", "Forward Plus")
 config/icon="res://icon.svg"
+
+[autoload]
+
+Globals="*res://globals/Globals.gd"
