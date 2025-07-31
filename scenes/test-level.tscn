@@ -1,6 +1,7 @@
-[gd_scene load_steps=7 format=3 uid="uid://cs1jpi12r1ya"]
+[gd_scene load_steps=8 format=3 uid="uid://cs1jpi12r1ya"]
 
 [ext_resource type="PackedScene" uid="uid://yo167f7iyygr" path="res://scenes/player/player.tscn" id="1_tny1j"]
+[ext_resource type="PackedScene" uid="uid://dq1urshjagll0" path="res://scenes/lasso/lasso.tscn" id="2_qlq2q"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_tny1j"]
 sky_horizon_color = Color(0.662243, 0.671743, 0.686743, 1)
@@ -42,3 +43,6 @@ skeleton = NodePath("")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Ground/StaticBody3D"]
 shape = SubResource("ConcavePolygonShape3D_qlq2q")
+
+[node name="Lasso" parent="." instance=ExtResource("2_qlq2q")]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 4, -9)

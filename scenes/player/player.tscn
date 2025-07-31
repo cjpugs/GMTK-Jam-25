@@ -1,6 +1,7 @@
-[gd_scene load_steps=4 format=3 uid="uid://yo167f7iyygr"]
+[gd_scene load_steps=5 format=3 uid="uid://yo167f7iyygr"]
 
 [ext_resource type="Script" uid="uid://dvo0u1khehsa2" path="res://scenes/player/player.gd" id="1_8afob"]
+[ext_resource type="PackedScene" uid="uid://dbbnrcnxwaeki" path="res://scenes/lasso-launcher/lasso-launcher.tscn" id="2_dovo2"]
 
 [sub_resource type="CapsuleMesh" id="CapsuleMesh_8afob"]
 
@@ -21,3 +22,5 @@ shape = SubResource("ConvexPolygonShape3D_dovo2")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0)
 
 [node name="Camera3D" type="Camera3D" parent="Neck"]
+
+[node name="Lasso-launcher" parent="Neck/Camera3D" instance=ExtResource("2_dovo2")]

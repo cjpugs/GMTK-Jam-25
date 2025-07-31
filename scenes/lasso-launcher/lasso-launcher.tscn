@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://dbbnrcnxwaeki"]
+
+[ext_resource type="Script" uid="uid://cfdina8jlyek" path="res://scenes/lasso-launcher/lasso_launcher.gd" id="1_5qf4x"]
+
+[node name="Lasso-launcher" type="Node3D"]
+script = ExtResource("1_5qf4x")
