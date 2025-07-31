@@ -2,4 +2,7 @@ extends Node
 
 signal stat_change()
 
-var score : int = 0
+var score : int = 0:
+	set(val):
+		score = val
+		stat_change.emit()
