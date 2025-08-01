@@ -11,7 +11,13 @@ height = 2.68961
 [sub_resource type="SphereMesh" id="SphereMesh_62rwo"]
 
 [node name="Customer" type="CharacterBody3D"]
+disable_mode = 2
+collision_layer = 4
+collision_mask = 31
 script = ExtResource("1_nqnqc")
+
+[node name="LassoAttachPoint" type="Marker3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.25, 0)
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.316, 0)

@@ -17,3 +17,9 @@ func _physics_process(delta: float) -> void:
 
 func enable_gravity():
 	gravity_enabled = true
+
+func on_lasso_captured() -> void:
+	set_process_mode(Node.PROCESS_MODE_DISABLED)
+
+func on_lasso_released() -> void:
+	set_process_mode(Node.PROCESS_MODE_INHERIT)
