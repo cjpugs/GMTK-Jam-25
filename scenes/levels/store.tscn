@@ -1,15 +1,8 @@
-[gd_scene load_steps=8 format=3 uid="uid://bavk5pw8cq6lh"]
+[gd_scene load_steps=7 format=3 uid="uid://bavk5pw8cq6lh"]
 
 [ext_resource type="ArrayMesh" uid="uid://wmbcs2ffhsne" path="res://assets/models/OuterWall.obj" id="1_y7kff"]
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_7i1yb"]
-albedo_color = Color(0.196078, 0.196078, 0.196078, 1)
-
-[sub_resource type="PlaneMesh" id="PlaneMesh_7i1yb"]
-material = SubResource("StandardMaterial3D_7i1yb")
-size = Vector2(1000, 1000)
-subdivide_width = 10
-subdivide_depth = 10
+[sub_resource type="PlaneMesh" id="PlaneMesh_y7kff"]
 
 [sub_resource type="WorldBoundaryShape3D" id="WorldBoundaryShape3D_7i1yb"]
 
@@ -32,24 +25,31 @@ data = PackedVector3Array(3.9203, -8, -39.8083, -0.0006, -8, -40, 3.9203, 8, -39
 [node name="Floor" type="StaticBody3D" parent="."]
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="Floor"]
-mesh = SubResource("PlaneMesh_7i1yb")
+transform = Transform3D(100, 0, 0, 0, 100, 0, 0, 0, 100, 0, 0, 0)
+mesh = SubResource("PlaneMesh_y7kff")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Floor"]
 shape = SubResource("WorldBoundaryShape3D_7i1yb")
 
 [node name="InnerWall" type="StaticBody3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 11, 0)
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="InnerWall"]
+transform = Transform3D(1.5, 0, 0, 0, 1.5, 0, 0, 0, 1.5, 0, 0, 0)
 mesh = SubResource("CylinderMesh_y7kff")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="InnerWall"]
+transform = Transform3D(1.5, 0, 0, 0, 1.5, 0, 0, 0, 1.5, 0, 0, 0)
 shape = SubResource("CylinderShape3D_y7kff")
 
 [node name="OuterWall" type="StaticBody3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 11, 0)
 
 [node name="OuterWallMesh" type="MeshInstance3D" parent="OuterWall"]
+transform = Transform3D(1.5, 0, 0, 0, 1.5, 0, 0, 0, 1.5, 0, 0, 0)
 mesh = ExtResource("1_y7kff")
 skeleton = NodePath("../..")
 
 [node name="CollisionShape3D2" type="CollisionShape3D" parent="OuterWall"]
+transform = Transform3D(1.5, 0, 0, 0, 1.5, 0, 0, 0, 1.5, 0, 0, 0)
 shape = SubResource("ConcavePolygonShape3D_y7kff")
