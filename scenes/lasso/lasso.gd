@@ -1,15 +1,15 @@
-extends RayCast3D
+extends RigidBody3D
 
-@export var speed := 5.0
+@export var direction = Vector3(0, 1, -2)
+@export var impulse_amount := 15.0
 
-func _physics_process(delta: float) -> void:
-	position += global_basis * Vector3.FORWARD * speed * delta
-	target_position = Vector3.FORWARD * speed * delta
-	force_raycast_update()
-	var collider = get_collider()
-	if is_colliding():
-		global_position = get_collision_point()
-		set_physics_process(false)
+func launch() -> void:
+	var target_direction = basis * direction.normalized()
+	var target_impulse = target_direction * impulse_amount
+	apply_impulse(target_impulse)
+
+# If the object hits something, check what it is
+# If the object hits a collectable, customer, or security guard, latch onto it
 
 func cleanup() -> void:
 	queue_free()
