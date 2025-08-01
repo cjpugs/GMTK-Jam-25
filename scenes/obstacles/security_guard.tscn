@@ -1,0 +1,43 @@
+[gd_scene load_steps=7 format=3 uid="uid://b4se3yrsxenvf"]
+
+[ext_resource type="Script" uid="uid://dykkru6pixfku" path="res://scenes/obstacles/security_guard.gd" id="1_5sf2l"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_s8bsn"]
+albedo_color = Color(0.0745098, 0.172549, 0.360784, 1)
+
+[sub_resource type="CapsuleMesh" id="CapsuleMesh_s8bsn"]
+material = SubResource("StandardMaterial3D_s8bsn")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_5sf2l"]
+albedo_color = Color(0.558283, 0.673849, 0.968257, 1)
+
+[sub_resource type="SphereMesh" id="SphereMesh_5sf2l"]
+material = SubResource("StandardMaterial3D_5sf2l")
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_t2qm8"]
+radius = 0.404627
+height = 2.68961
+
+[node name="SecurityGuard" type="CharacterBody3D" groups=["Enemies"]]
+script = ExtResource("1_5sf2l")
+
+[node name="Body" type="MeshInstance3D" parent="."]
+transform = Transform3D(0.6, 0, 0, 0, 1, 0, 0, 0, 0.8, 0, 1, 0)
+mesh = SubResource("CapsuleMesh_s8bsn")
+
+[node name="Head" type="MeshInstance3D" parent="Body"]
+transform = Transform3D(1, 0, 0, 0, 0.6, 0, 0, 0, 0.75, 0, 1.35572, 0)
+mesh = SubResource("SphereMesh_5sf2l")
+skeleton = NodePath("../..")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.316, 0)
+shape = SubResource("CapsuleShape3D_t2qm8")
+
+[node name="NavigationAgent3D" type="NavigationAgent3D" parent="."]
+target_desired_distance = 2.0
+path_height_offset = 1.0
+avoidance_enabled = true
+
+[connection signal="target_reached" from="NavigationAgent3D" to="." method="_on_navigation_agent_3d_target_reached"]
+[connection signal="velocity_computed" from="NavigationAgent3D" to="." method="_on_navigation_agent_3d_velocity_computed"]
