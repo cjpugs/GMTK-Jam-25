@@ -1,0 +1,22 @@
+[gd_scene load_steps=4 format=3 uid="uid://dq1urshjagll0"]
+
+[ext_resource type="Script" uid="uid://dweh25pfletnx" path="res://scenes/lasso/lasso.gd" id="1_mbguu"]
+
+[sub_resource type="TorusMesh" id="TorusMesh_crwy7"]
+inner_radius = 0.9
+
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_mbguu"]
+points = PackedVector3Array(0.126885, 0.0610863, 1.01587, 1.01587, 0.0610863, -0.126885, 0.825347, -0.0658482, 0.603001, -0.952232, -0.0658482, 0.380853, -0.984052, 0.0610863, -0.28559, 0.603001, -0.0658482, -0.825347, -0.825347, -0.0658482, -0.603001, -0.0634423, -0.0658482, 1.01587, -0.698264, 0.0610863, 0.761905, 0.380853, 0.0610863, -0.952232, 0.761905, 0.0610863, 0.698264, 1.01587, -0.0658482, -0.0634423, -0.571379, 0.0610863, -0.856969, 0.856969, 0.0610863, -0.571379, 0.380853, -0.0658482, 0.952232, -0.0634423, -0.0658482, -1.01587, -0.507937, -0.0658482, 0.888789, -0.984052, 0.0610863, 0.28559, -1.01587, -0.0658482, -0.0634423, 0.984052, 0.0610863, 0.28559, -0.28559, 0.0610863, 0.984052, 0.952232, -0.0658482, -0.380853, -0.380853, -0.0658482, -0.952232, -0.126885, 0.0610863, -1.01587, -0.856969, 0.0610863, -0.571379, 0.952232, -0.0658482, 0.380853, 0.571379, 0.0610863, 0.856969, 0.253968, -0.0658482, -0.984052, -0.825347, -0.0658482, 0.603001, -0.952232, -0.0658482, -0.380853, 0.698264, 0.0610863, -0.761905, -0.856969, 0.0610863, 0.571379)
+
+[node name="Lasso" type="RigidBody3D"]
+top_level = true
+script = ExtResource("1_mbguu")
+
+[node name="LineAttachPoint" type="Marker3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 1)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+mesh = SubResource("TorusMesh_crwy7")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+shape = SubResource("ConvexPolygonShape3D_mbguu")
