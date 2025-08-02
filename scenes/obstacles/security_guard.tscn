@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=3 uid="uid://b4se3yrsxenvf"]
+[gd_scene load_steps=9 format=3 uid="uid://b4se3yrsxenvf"]
 
 [ext_resource type="Script" uid="uid://dykkru6pixfku" path="res://scenes/obstacles/security_guard.gd" id="1_5sf2l"]
 
@@ -13,6 +13,12 @@ albedo_color = Color(0.558283, 0.673849, 0.968257, 1)
 
 [sub_resource type="SphereMesh" id="SphereMesh_5sf2l"]
 material = SubResource("StandardMaterial3D_5sf2l")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_t2qm8"]
+albedo_color = Color(0.741176, 0.584314, 0, 1)
+
+[sub_resource type="BoxMesh" id="BoxMesh_aspyq"]
+material = SubResource("StandardMaterial3D_t2qm8")
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_t2qm8"]
 radius = 0.404627
@@ -29,6 +35,10 @@ mesh = SubResource("CapsuleMesh_s8bsn")
 transform = Transform3D(1, 0, 0, 0, 0.6, 0, 0, 0, 0.75, 0, 1.35572, 0)
 mesh = SubResource("SphereMesh_5sf2l")
 skeleton = NodePath("../..")
+
+[node name="Badge" type="MeshInstance3D" parent="Body"]
+transform = Transform3D(0.0473073, -0.0206687, 0.0292956, 0.00720572, 0.148434, -2.39718e-10, -0.0144949, 0.00633287, 0.0956126, 0.413437, 0.579715, -0.247279)
+mesh = SubResource("BoxMesh_aspyq")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.316, 0)

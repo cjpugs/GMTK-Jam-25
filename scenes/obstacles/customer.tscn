@@ -1,4 +1,4 @@
-[gd_scene load_steps=5 format=3 uid="uid://cnmcblse6n4sp"]
+[gd_scene load_steps=7 format=3 uid="uid://cnmcblse6n4sp"]
 
 [ext_resource type="Script" uid="uid://jmmcc6swlgwd" path="res://scenes/obstacles/customer.gd" id="1_nqnqc"]
 
@@ -6,9 +6,17 @@
 radius = 0.404627
 height = 2.68961
 
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_nqnqc"]
+
 [sub_resource type="CapsuleMesh" id="CapsuleMesh_62rwo"]
+resource_local_to_scene = true
+material = SubResource("StandardMaterial3D_nqnqc")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_llk0y"]
 
 [sub_resource type="SphereMesh" id="SphereMesh_62rwo"]
+resource_local_to_scene = true
+material = SubResource("StandardMaterial3D_llk0y")
 
 [node name="Customer" type="CharacterBody3D"]
 script = ExtResource("1_nqnqc")
