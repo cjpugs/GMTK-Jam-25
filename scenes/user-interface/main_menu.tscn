@@ -61,6 +61,19 @@ theme_override_styles/pressed = ExtResource("4_ik3rk")
 theme_override_styles/normal = ExtResource("5_4bt08")
 text = "Play"
 
+[node name="Credits" type="Button" parent="HBoxContainer"]
+layout_mode = 2
+focus_mode = 0
+theme_override_colors/font_hover_color = Color(0.545098, 0.815686, 1, 1)
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_pressed_color = Color(0.362578, 0.503752, 0.852388, 1)
+theme_override_fonts/font = ExtResource("2_xyjik")
+theme_override_font_sizes/font_size = 30
+theme_override_styles/hover = ExtResource("3_fq3by")
+theme_override_styles/pressed = ExtResource("4_ik3rk")
+theme_override_styles/normal = ExtResource("5_4bt08")
+text = "Credits"
+
 [node name="Quit" type="Button" parent="HBoxContainer"]
 layout_mode = 2
 focus_mode = 0
@@ -75,4 +88,5 @@ theme_override_styles/normal = ExtResource("5_4bt08")
 text = "Quit"
 
 [connection signal="pressed" from="HBoxContainer/Play" to="." method="_on_play_pressed"]
+[connection signal="pressed" from="HBoxContainer/Credits" to="." method="_on_credits_pressed"]
 [connection signal="pressed" from="HBoxContainer/Quit" to="." method="_on_quit_pressed"]
