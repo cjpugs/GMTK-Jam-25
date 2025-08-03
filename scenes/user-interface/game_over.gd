@@ -3,6 +3,7 @@ extends Control
 func _ready() -> void:
 	$CanvasLayer/GridContainer/ScoreAmount.text = str(Globals.score)
 	$CanvasLayer/GridContainer/ItemsAmount.text = str(Globals.items_grabbed)
+	Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
 
 func _on_play_again_pressed() -> void:
 	TransitionScreen.change_scene("res://scenes/levels/test-level.tscn")

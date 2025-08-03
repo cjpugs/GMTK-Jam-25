@@ -1,7 +1,7 @@
 extends Control
 
 func _ready() -> void:
-	pass
+	Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
 
 func _on_play_pressed() -> void:
 	TransitionScreen.change_scene("res://scenes/levels/test-level.tscn")

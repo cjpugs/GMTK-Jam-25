@@ -1,10 +1,11 @@
-[gd_scene load_steps=10 format=3 uid="uid://cs1jpi12r1ya"]
+[gd_scene load_steps=11 format=3 uid="uid://cs1jpi12r1ya"]
 
 [ext_resource type="PackedScene" uid="uid://yo167f7iyygr" path="res://scenes/player/player.tscn" id="1_tny1j"]
 [ext_resource type="Script" uid="uid://y3d2gahq05fi" path="res://scenes/levels/test_level.gd" id="1_xcg81"]
 [ext_resource type="PackedScene" uid="uid://bavk5pw8cq6lh" path="res://scenes/levels/store.tscn" id="2_er0ob"]
 [ext_resource type="PackedScene" uid="uid://b4se3yrsxenvf" path="res://scenes/obstacles/security_guard.tscn" id="4_ck1ti"]
 [ext_resource type="PackedScene" uid="uid://cnmcblse6n4sp" path="res://scenes/obstacles/customer.tscn" id="4_q4av7"]
+[ext_resource type="PackedScene" uid="uid://bnmn4sf2cl2s7" path="res://scenes/user-interface/game_ui.tscn" id="6_npghq"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_tny1j"]
 sky_horizon_color = Color(0.662243, 0.671743, 0.686743, 1)
@@ -55,3 +56,5 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -32.7898, 0, -9.90289)
 
 [node name="Customer3" parent="." instance=ExtResource("4_q4av7")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -32.9567, 9.53674e-07, -6.68702)
+
+[node name="GameUI" parent="." instance=ExtResource("6_npghq")]
