@@ -1,4 +1,4 @@
-extends Area3D
+extends RigidBody3D
 
 @export var point_value := 100 # placeholder default score
 @export var mesh_override: Mesh
@@ -21,3 +21,10 @@ func _ready() -> void:
 func _on_body_entered(_body: Node3D) -> void:
 	Globals.score += point_value
 	queue_free()
+
+# Returns RigidBody3D security guard copy
+func enter_lassoed_state(lasso: RigidBody3D) -> RigidBody3D:
+	return self
+
+func exit_lassoed_state() -> void:
+	pass

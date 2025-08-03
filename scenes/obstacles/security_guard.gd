@@ -8,6 +8,8 @@ var noticing_player : bool = false
 @export var speed : int = 200
 var curr_speed : int = speed
 @onready var nav_agent = $NavigationAgent3D
+const SECURITYGUARD_RIGIDBODY = preload("res://scenes/obstacles/security_guard-rigidbody.tscn")
+
 
 func _physics_process(delta: float) -> void:
 	
@@ -47,3 +49,16 @@ func _on_notice_area_body_exited(body: Node3D) -> void:
 	if body.is_in_group("Player"):
 		noticing_player = false
 		curr_speed = 0
+
+# Instantiates a RigidBody3D carbon copy of the security guard, attaches the lasso to it, then kills itself.
+# Returns RigidBody3D security guard copy
+func enter_lassoed_state(lasso: RigidBody3D) -> RigidBody3D:
+	var securityguard_rigidbody = SECURITYGUARD_RIGIDBODY.instantiate()
+	securityguard_rigidbody.global_transform = global_transform
+	if get_parent():
+		get_parent().add_child(securityguard_rigidbody)
+	queue_free()
+	return securityguard_rigidbody
+
+func on_lasso_released() -> void:
+	set_process_mode(Node.PROCESS_MODE_INHERIT)

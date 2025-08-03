@@ -73,6 +73,14 @@ pause={
 ]
 }
 
+[layer_names]
+
+3d_physics/layer_1="Environment"
+3d_physics/layer_2="Player"
+3d_physics/layer_3="NPC"
+3d_physics/layer_4="Collectible"
+3d_physics/layer_5="Lasso"
+
 [navigation]
 
 3d/default_cell_size=0.1

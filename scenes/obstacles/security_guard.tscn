@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=3 uid="uid://b4se3yrsxenvf"]
+[gd_scene load_steps=12 format=3 uid="uid://gqfvs0j8ne7u"]
 
 [ext_resource type="Script" uid="uid://dykkru6pixfku" path="res://scenes/obstacles/security_guard.gd" id="1_5sf2l"]
 
@@ -33,7 +33,13 @@ height = 2.68961
 [sub_resource type="SphereShape3D" id="SphereShape3D_5sf2l"]
 
 [node name="SecurityGuard" type="CharacterBody3D" groups=["Enemies"]]
+disable_mode = 2
+collision_layer = 32
+collision_mask = 31
 script = ExtResource("1_5sf2l")
+
+[node name="LassoAttachPoint" type="Marker3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.25, 0)
 
 [node name="Body" type="MeshInstance3D" parent="."]
 transform = Transform3D(0.6, 0, 0, 0, 1, 0, 0, 0, 0.8, 0, 1, 0)

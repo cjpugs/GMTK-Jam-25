@@ -8,8 +8,5 @@
 mesh = SubResource("ImmediateMesh_raabo")
 script = ExtResource("1_raabo")
 endpoint = NodePath("Endpoint")
-offset = null
-thickness = null
-points = null
 
 [node name="Endpoint" type="Node3D" parent="."]

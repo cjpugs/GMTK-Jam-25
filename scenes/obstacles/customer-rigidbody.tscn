@@ -1,28 +1,22 @@
-[gd_scene load_steps=7 format=3 uid="uid://cnmcblse6n4sp"]
+[gd_scene load_steps=5 format=3 uid="uid://cbetg2afhq5s2"]
 
-[ext_resource type="Script" uid="uid://jmmcc6swlgwd" path="res://scenes/obstacles/customer.gd" id="1_nqnqc"]
+[ext_resource type="Script" uid="uid://bb5w5t1mrnb25" path="res://scenes/obstacles/customer_rigidbody.gd" id="1_iekhp"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_62rwo"]
 radius = 0.404627
 height = 2.68961
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_nqnqc"]
-
 [sub_resource type="CapsuleMesh" id="CapsuleMesh_62rwo"]
-resource_local_to_scene = true
-material = SubResource("StandardMaterial3D_nqnqc")
-
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_llk0y"]
 
 [sub_resource type="SphereMesh" id="SphereMesh_62rwo"]
-resource_local_to_scene = true
-material = SubResource("StandardMaterial3D_llk0y")
 
-[node name="Customer" type="CharacterBody3D"]
+[node name="CustomerRigidBody" type="RigidBody3D"]
 disable_mode = 2
 collision_layer = 4
-collision_mask = 63
-script = ExtResource("1_nqnqc")
+collision_mask = 47
+contact_monitor = true
+max_contacts_reported = 5
+script = ExtResource("1_iekhp")
 
 [node name="LassoAttachPoint" type="Marker3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.25, 0)
