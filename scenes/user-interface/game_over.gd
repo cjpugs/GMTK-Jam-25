@@ -1,17 +1,17 @@
-extends CanvasLayer
+extends Control
 
 func _ready() -> void:
-	$GridContainer/ScoreAmount.text = str(Globals.score)
-	$GridContainer/ItemsAmount.text = str(Globals.items_grabbed)
+	$CanvasLayer/GridContainer/ScoreAmount.text = str(Globals.score)
+	$CanvasLayer/GridContainer/ItemsAmount.text = str(Globals.items_grabbed)
+	Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
 
 func _on_play_again_pressed() -> void:
-	print("Send to play again")
+	TransitionScreen.change_scene("res://scenes/levels/test-level.tscn")
 
 
 func _on_main_menu_pressed() -> void:
-	print("Send to main menu")
+	TransitionScreen.change_scene("res://scenes/user-interface/main_menu.tscn")
 
 
 func _on_quit_pressed() -> void:
-	print("Quitting game")
 	get_tree().quit()

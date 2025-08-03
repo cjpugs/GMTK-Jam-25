@@ -5,6 +5,24 @@ extends CharacterBody3D
 const CUSTOMER_RIGIDBODY = preload("res://scenes/obstacles/customer-rigidbody.tscn")
 
 
+var customer_data : Customer_Data
+
+func _ready() -> void:
+	customer_data = Customer_Data.new()
+	
+	var headColor : Color = customer_data.get_head_color()
+	var bodyColor : Color = customer_data.get_body_color()
+	
+	var new_head_material = $Body/Head.mesh.material.duplicate()
+	var new_body_material = $Body/Head.mesh.material.duplicate()
+	
+	new_head_material.albedo_color = headColor
+	new_body_material.albedo_color = bodyColor
+	
+	$Body/Head.material_override = new_head_material
+	$Body.material_override = new_body_material
+	
+
 func _physics_process(delta: float) -> void:
 	if gravity_enabled:
 		if not is_on_floor():

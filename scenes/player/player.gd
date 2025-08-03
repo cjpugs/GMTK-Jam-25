@@ -1,8 +1,8 @@
 extends CharacterBody3D
 
-@export var speed = 14	# How fast the player moves in meters per second
+@export var speed = 10	# How fast the player moves in meters per second
 @export var fall_acceleration = 75 # Downward air acceleration in meters per second squared
-@export var look_sensitivity = 0.01 # Sensitivity of mouse look movement
+@export var look_sensitivity = 0.003 # Sensitivity of mouse look movement
 
 var target_velocity = Vector3.ZERO
 var lasso_mode = false

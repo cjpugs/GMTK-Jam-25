@@ -14,9 +14,23 @@ albedo_color = Color(0.558283, 0.673849, 0.968257, 1)
 [sub_resource type="SphereMesh" id="SphereMesh_5sf2l"]
 material = SubResource("StandardMaterial3D_5sf2l")
 
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_t2qm8"]
+albedo_color = Color(0.741176, 0.584314, 0, 1)
+
+[sub_resource type="BoxMesh" id="BoxMesh_aspyq"]
+material = SubResource("StandardMaterial3D_t2qm8")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_aspyq"]
+albedo_color = Color(0.030299, 0.0939855, 0.217589, 1)
+
+[sub_resource type="CapsuleMesh" id="CapsuleMesh_5sf2l"]
+material = SubResource("StandardMaterial3D_aspyq")
+
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_t2qm8"]
 radius = 0.404627
 height = 2.68961
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_5sf2l"]
 
 [node name="SecurityGuard" type="CharacterBody3D" groups=["Enemies"]]
 disable_mode = 2
@@ -36,6 +50,14 @@ transform = Transform3D(1, 0, 0, 0, 0.6, 0, 0, 0, 0.75, 0, 1.35572, 0)
 mesh = SubResource("SphereMesh_5sf2l")
 skeleton = NodePath("../..")
 
+[node name="Badge" type="MeshInstance3D" parent="Body"]
+transform = Transform3D(0.0423931, -0.0271925, 0.0701332, 0.00684514, 0.207018, -1.84623e-09, -0.0202986, 0.0130203, 0.146471, 0.420173, 0.585444, -0.226809)
+mesh = SubResource("BoxMesh_aspyq")
+
+[node name="Temp" type="MeshInstance3D" parent="Body"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0292434, 0, 0)
+mesh = SubResource("CapsuleMesh_5sf2l")
+
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.316, 0)
 shape = SubResource("CapsuleShape3D_t2qm8")
@@ -45,5 +67,13 @@ target_desired_distance = 2.0
 path_height_offset = 1.0
 avoidance_enabled = true
 
+[node name="NoticeArea" type="Area3D" parent="."]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="NoticeArea"]
+transform = Transform3D(30, 0, 0, 0, 30, 0, 0, 0, 30, 0, 1.84481, 0)
+shape = SubResource("SphereShape3D_5sf2l")
+
 [connection signal="target_reached" from="NavigationAgent3D" to="." method="_on_navigation_agent_3d_target_reached"]
 [connection signal="velocity_computed" from="NavigationAgent3D" to="." method="_on_navigation_agent_3d_velocity_computed"]
+[connection signal="body_entered" from="NoticeArea" to="." method="_on_notice_area_body_entered"]
+[connection signal="body_exited" from="NoticeArea" to="." method="_on_notice_area_body_exited"]
