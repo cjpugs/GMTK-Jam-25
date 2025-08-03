@@ -9,18 +9,24 @@ func _enter_tree() -> void:
 	max_contacts_reported = 5
 	
 func _on_body_entered(body: PhysicsBody3D) -> void:
-	if body.has_method("on_lasso_captured") && !something_caught:
+	if body.has_method("enter_lassoed_state") && !something_caught:
 		call_deferred("attach_to_object", body)
 		
 func attach_to_object(node: Node) -> void:
-	if node.has_method("on_lasso_captured") && !something_caught:
+	if node.has_method("enter_lassoed_state") && !something_caught:
 		something_caught = true
-		get_parent().remove_child(self)
-		node.add_child(self)	# Add self as body's child
-		global_position = node.get_child(0).global_position
-		global_rotation = Vector3.ZERO
+		
+		var lassoed_object = node.enter_lassoed_state(self)
+		
+		if get_parent():
+			get_parent().remove_child(self)
+		lassoed_object.add_child(self)
+		global_transform = lassoed_object.get_child(0).global_transform
+		top_level = false
+		$CollisionShape3D.queue_free()
 		self.set_freeze_enabled(true)
-		node.on_lasso_captured()
+		
+		Globals.lasso_caught_object.emit(lassoed_object)
 
 func launch() -> void:
 	var target_direction = basis * direction.normalized()

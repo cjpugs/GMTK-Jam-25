@@ -1,6 +1,4 @@
-[gd_scene load_steps=5 format=3 uid="uid://cnmcblse6n4sp"]
-
-[ext_resource type="Script" uid="uid://jmmcc6swlgwd" path="res://scenes/obstacles/customer.gd" id="1_nqnqc"]
+[gd_scene load_steps=4 format=3 uid="uid://cbetg2afhq5s2"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_62rwo"]
 radius = 0.404627
@@ -10,11 +8,10 @@ height = 2.68961
 
 [sub_resource type="SphereMesh" id="SphereMesh_62rwo"]
 
-[node name="Customer" type="CharacterBody3D"]
+[node name="CustomerRigidBody" type="RigidBody3D"]
 disable_mode = 2
 collision_layer = 4
 collision_mask = 63
-script = ExtResource("1_nqnqc")
 
 [node name="LassoAttachPoint" type="Marker3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.25, 0)

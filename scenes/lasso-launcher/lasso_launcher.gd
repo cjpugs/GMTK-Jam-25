@@ -23,3 +23,4 @@ func _physics_process(_delta: float) -> void:
 			$"Lasso-line".endpoint = lasso_node.get_child(0)
 			$"Lasso-line".generate_line = true
 			lasso_thrown = true;
+			
