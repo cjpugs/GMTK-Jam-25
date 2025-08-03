@@ -1,7 +1,7 @@
-extends CanvasLayer
+extends Control
 
-@onready var score_amount_label : Label = $ScoreUI/VBoxContainer/ScoreAmount
-@onready var timer_label : Label = $TimerUI/VBoxContainer/TimeAmount
+@onready var score_amount_label : Label = $CanvasLayer/ScoreUI/VBoxContainer/ScoreAmount
+@onready var timer_label : Label = $CanvasLayer/TimerUI/VBoxContainer/TimeAmount
 
 @onready var countdown_timer : Timer = $Countdown
 
@@ -27,7 +27,5 @@ func update_timer():
 		var second = int(time_left) % 60
 		timer_label.text = "%02d:%02d" % [minute, second]
 
-
 func _on_countdown_timeout() -> void:
-	#trigger game over
-	print("Timer ran out! Game over")
+	TransitionScreen.change_scene("res://scenes/user-interface/game_over.tscn")

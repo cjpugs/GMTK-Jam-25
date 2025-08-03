@@ -3,22 +3,28 @@ extends CharacterBody3D
 ## Enemy Pathfinding: 10 min tutorial
 ## https://youtu.be/-juhGgA076E?si=LyneMsTcXfJ_MpzU
 
+var noticing_player : bool = false
 
-var speed : int = 100
+@export var speed : int = 200
+var curr_speed : int = speed
 @onready var nav_agent = $NavigationAgent3D
 
 func _physics_process(delta: float) -> void:
 	
-	var current_location : Vector3 = global_position
-	var next_location : Vector3 = nav_agent.get_next_path_position()
-	var new_velocity : Vector3 = (next_location - current_location) * speed * delta
-	
-	nav_agent.set_velocity(new_velocity)
+	if noticing_player:
+		var current_location : Vector3 = global_position
+		var next_location : Vector3 = nav_agent.get_next_path_position()
+		var new_velocity : Vector3 = (next_location - current_location) * curr_speed * delta
+		
+		nav_agent.set_velocity(new_velocity)
 	
 
 func update_target_location(target_location):
-	nav_agent.set_target_position(target_location)
-	
+	if noticing_player:
+		nav_agent.set_target_position(target_location)
+		var flat_target_pos = Vector3(target_location.x, global_position.y, target_location.z)
+		look_at(flat_target_pos)
+		global_rotation.y += deg_to_rad(90)
 
 
 func _on_navigation_agent_3d_target_reached() -> void:
@@ -27,4 +33,17 @@ func _on_navigation_agent_3d_target_reached() -> void:
 
 func _on_navigation_agent_3d_velocity_computed(safe_velocity: Vector3) -> void:
 	velocity = velocity.move_toward(safe_velocity,0.25)
-	move_and_slide()
+	if noticing_player:
+		move_and_slide()
+
+
+func _on_notice_area_body_entered(body: Node3D) -> void:
+	if body.is_in_group("Player"):
+		noticing_player = true
+		curr_speed = speed
+
+
+func _on_notice_area_body_exited(body: Node3D) -> void:
+	if body.is_in_group("Player"):
+		noticing_player = false
+		curr_speed = 0
