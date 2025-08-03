@@ -1,7 +1,7 @@
 extends Control
 
 func _ready() -> void:
-	get_tree().set_input_as_handled()
+	pass
 	
 
 

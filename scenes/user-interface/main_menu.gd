@@ -1,7 +1,7 @@
 extends Control
 
 func _ready() -> void:
-	get_tree().set_input_as_handled()
+	pass
 
 func _on_play_pressed() -> void:
 	TransitionScreen.change_scene("res://scenes/levels/test-level.tscn")
