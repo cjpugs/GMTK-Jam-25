@@ -61,3 +61,7 @@ func _physics_process(delta) -> void:
 func setup_lasso_mode(object: RigidBody3D) -> void:
 	lasso_mode = true
 	target_look_at = object
+	
+func disable_lasso_mode() -> void:
+	lasso_mode = false
+	target_look_at = null

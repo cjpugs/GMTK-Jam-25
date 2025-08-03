@@ -33,7 +33,8 @@ func _on_navigation_agent_3d_velocity_computed(safe_velocity: Vector3) -> void:
 func enter_lassoed_state(lasso: RigidBody3D) -> RigidBody3D:
 	var securityguard_rigidbody = SECURITYGUARD_RIGIDBODY.instantiate()
 	securityguard_rigidbody.global_transform = global_transform
-	
+	if get_parent():
+		get_parent().add_child(securityguard_rigidbody)
 	queue_free()
 	return securityguard_rigidbody
 

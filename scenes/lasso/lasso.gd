@@ -34,6 +34,7 @@ func launch() -> void:
 	apply_impulse(target_impulse)
 
 func cleanup() -> void:
-	if get_parent().has_method("on_lasso_released"):
-		get_parent().on_lasso_released()
+	if something_caught && get_parent().has_method("exit_lassoed_state"):
+		get_parent().exit_lassoed_state()
+		Globals.lasso_released_object.emit()
 	queue_free()

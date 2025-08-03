@@ -4,5 +4,5 @@ extends RigidBody3D
 func enter_lassoed_state(lasso: RigidBody3D) -> RigidBody3D:
 	return self
 
-func on_lasso_released() -> void:
-	set_process_mode(Node.PROCESS_MODE_INHERIT)
+func exit_lassoed_state() -> void:
+	pass

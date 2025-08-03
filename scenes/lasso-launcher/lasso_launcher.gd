@@ -8,12 +8,7 @@ func _physics_process(_delta: float) -> void:
 	if Input.is_action_just_pressed("charge_lasso"):
 		if lasso_thrown:
 			$"Lasso-line".generate_line = false
-			
-			#if $Lasso.something_caught:
-				#$Lasso.
-			
 			lasso_node.cleanup()
-	
 			lasso_thrown = false;
 		else: # Throw Lasso
 			lasso_node = LASSO.instantiate()

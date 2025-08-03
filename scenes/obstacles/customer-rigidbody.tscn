@@ -1,4 +1,6 @@
-[gd_scene load_steps=4 format=3 uid="uid://cbetg2afhq5s2"]
+[gd_scene load_steps=5 format=3 uid="uid://cbetg2afhq5s2"]
+
+[ext_resource type="Script" uid="uid://bb5w5t1mrnb25" path="res://scenes/obstacles/customer_rigidbody.gd" id="1_iekhp"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_62rwo"]
 radius = 0.404627
@@ -11,7 +13,10 @@ height = 2.68961
 [node name="CustomerRigidBody" type="RigidBody3D"]
 disable_mode = 2
 collision_layer = 4
-collision_mask = 63
+collision_mask = 47
+contact_monitor = true
+max_contacts_reported = 5
+script = ExtResource("1_iekhp")
 
 [node name="LassoAttachPoint" type="Marker3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.25, 0)

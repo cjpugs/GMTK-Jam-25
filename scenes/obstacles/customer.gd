@@ -27,6 +27,8 @@ func on_lasso_released() -> void:
 func enter_lassoed_state(lasso: RigidBody3D) -> RigidBody3D:
 	var customer_rigidbody = CUSTOMER_RIGIDBODY.instantiate()
 	customer_rigidbody.global_transform = global_transform
+	if get_parent():
+		get_parent().add_child(customer_rigidbody)
 	
 	queue_free()
 	return customer_rigidbody
