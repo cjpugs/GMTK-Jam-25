@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://b4se3yrsxenvf"]
+[gd_scene load_steps=12 format=3 uid="uid://b4se3yrsxenvf"]
 
 [ext_resource type="Script" uid="uid://dykkru6pixfku" path="res://scenes/obstacles/security_guard.gd" id="1_5sf2l"]
 
@@ -20,7 +20,11 @@ albedo_color = Color(0.741176, 0.584314, 0, 1)
 [sub_resource type="BoxMesh" id="BoxMesh_aspyq"]
 material = SubResource("StandardMaterial3D_t2qm8")
 
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_aspyq"]
+albedo_color = Color(0.030299, 0.0939855, 0.217589, 1)
+
 [sub_resource type="CapsuleMesh" id="CapsuleMesh_5sf2l"]
+material = SubResource("StandardMaterial3D_aspyq")
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_t2qm8"]
 radius = 0.404627
@@ -60,7 +64,7 @@ avoidance_enabled = true
 [node name="NoticeArea" type="Area3D" parent="."]
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="NoticeArea"]
-transform = Transform3D(15, 0, 0, 0, 15, 0, 0, 0, 15, 0, 1.84481, 0)
+transform = Transform3D(30, 0, 0, 0, 30, 0, 0, 0, 30, 0, 1.84481, 0)
 shape = SubResource("SphereShape3D_5sf2l")
 
 [connection signal="target_reached" from="NavigationAgent3D" to="." method="_on_navigation_agent_3d_target_reached"]

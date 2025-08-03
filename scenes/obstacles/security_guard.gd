@@ -5,7 +5,7 @@ extends CharacterBody3D
 
 var noticing_player : bool = false
 
-@export var speed : int = 100
+@export var speed : int = 200
 var curr_speed : int = speed
 @onready var nav_agent = $NavigationAgent3D
 
@@ -20,10 +20,11 @@ func _physics_process(delta: float) -> void:
 	
 
 func update_target_location(target_location):
-	nav_agent.set_target_position(target_location)
-	var flat_target_pos = Vector3(target_location.x, global_position.y, target_location.z)
-	look_at(flat_target_pos)
-	global_rotation.y += deg_to_rad(90)
+	if noticing_player:
+		nav_agent.set_target_position(target_location)
+		var flat_target_pos = Vector3(target_location.x, global_position.y, target_location.z)
+		look_at(flat_target_pos)
+		global_rotation.y += deg_to_rad(90)
 
 
 func _on_navigation_agent_3d_target_reached() -> void:
@@ -32,7 +33,8 @@ func _on_navigation_agent_3d_target_reached() -> void:
 
 func _on_navigation_agent_3d_velocity_computed(safe_velocity: Vector3) -> void:
 	velocity = velocity.move_toward(safe_velocity,0.25)
-	move_and_slide()
+	if noticing_player:
+		move_and_slide()
 
 
 func _on_notice_area_body_entered(body: Node3D) -> void:
