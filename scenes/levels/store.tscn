@@ -3,9 +3,9 @@
 [ext_resource type="Texture2D" uid="uid://bfrewkjnij5sb" path="res://assets/textures/interiors/Beigewall_Texture.png" id="1_8s6uc"]
 [ext_resource type="ArrayMesh" uid="uid://wmbcs2ffhsne" path="res://assets/models/OuterWall.obj" id="1_y7kff"]
 [ext_resource type="Texture2D" uid="uid://du2ey5fmkfg4p" path="res://assets/textures/interiors/Rug2_Texture.png" id="2_njto3"]
-[ext_resource type="PackedScene" uid="uid://da2q60vl8igyj" path="res://assets/shelves/CurvedShelf40.tscn" id="4_b0hbt"]
-[ext_resource type="PackedScene" uid="uid://bxxd4dqiaes2o" path="res://assets/shelves/CurvedShelf50.tscn" id="5_apukm"]
-[ext_resource type="PackedScene" uid="uid://l626rbnagk7f" path="res://assets/shelves/CurvedShelf60.tscn" id="6_p8h1w"]
+[ext_resource type="PackedScene" uid="uid://da2q60vl8igyj" path="res://scenes/shelves/CurvedShelf40.tscn" id="4_b0hbt"]
+[ext_resource type="PackedScene" uid="uid://bxxd4dqiaes2o" path="res://scenes/shelves/CurvedShelf50.tscn" id="5_apukm"]
+[ext_resource type="PackedScene" uid="uid://l626rbnagk7f" path="res://scenes/shelves/CurvedShelf60.tscn" id="6_p8h1w"]
 
 [sub_resource type="PlaneMesh" id="PlaneMesh_m4iqm"]
 

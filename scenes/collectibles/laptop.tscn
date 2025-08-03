@@ -1,6 +1,6 @@
 [gd_scene load_steps=5 format=4 uid="uid://qcr1oiw78o0i"]
 
-[ext_resource type="Texture2D" uid="uid://dftdegg5sodk5" path="res://assets/models/collectibles/laptop/laptop.png" id="1_jdxv8"]
+[ext_resource type="Texture2D" uid="uid://dmd0abeby0grn" path="res://assets/models/collectibles/laptop/laptop.png" id="1_jdxv8"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_yqss8"]
 resource_name = "Material__laptop_png"

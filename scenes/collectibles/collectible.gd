@@ -8,15 +8,15 @@ func _ready() -> void:
 	if mesh_override:
 		$MeshInstance3D.mesh = mesh_override
 	
-	var scene_path := ""
-	match collectible_type:
-		"Laptop": scene_path = "res://scenes/collectibles/laptop.tscn"
-	
-	if scene_path != "":
-		var new_model = load(scene_path).instantiate()
-		$Model.queue_free()
-		add_child(new_model)
-		new_model.name = "Model"
+	#var scene_path := ""
+	#match collectible_type:
+		#"Laptop": scene_path = "res://scenes/collectibles/laptop.tscn"
+	#
+	#if scene_path != "":
+		#var new_model = load(scene_path).instantiate()
+		#$Model.queue_free()
+		#add_child(new_model)
+		#new_model.name = "Model"
 
 func _on_body_entered(_body: Node3D) -> void:
 	Globals.score += point_value
