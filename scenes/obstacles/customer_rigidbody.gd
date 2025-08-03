@@ -9,6 +9,7 @@ func _integrate_forces(state: PhysicsDirectBodyState3D) -> void:
 			var normal := state.get_contact_local_normal(i)
 			if normal.dot(Vector3.UP) > 0.90: # If contact is mostly upright (likely a floor)
 				despawn()
+				break
 
 func despawn() -> void:
 	var customer = CUSTOMER.instantiate()

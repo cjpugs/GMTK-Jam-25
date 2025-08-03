@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=3 uid="uid://gqfvs0j8ne7u"]
+[gd_scene load_steps=12 format=3 uid="uid://gqfvs0j8ne7u"]
 
 [ext_resource type="Script" uid="uid://dykkru6pixfku" path="res://scenes/obstacles/security_guard.gd" id="1_5sf2l"]
 
