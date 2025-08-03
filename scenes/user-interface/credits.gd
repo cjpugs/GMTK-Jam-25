@@ -1,4 +1,8 @@
-extends CanvasLayer
+extends Control
+
+func _ready() -> void:
+	get_tree().set_input_as_handled()
+	
 
 
 func _on_button_pressed() -> void:

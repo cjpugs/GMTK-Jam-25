@@ -7,10 +7,19 @@
 font = ExtResource("1_olv11")
 font_size = 30
 
-[node name="GameUI" type="CanvasLayer"]
+[node name="GameUI" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
 script = ExtResource("1_727f8")
 
-[node name="ScoreUI" type="Control" parent="."]
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+follow_viewport_enabled = true
+
+[node name="ScoreUI" type="Control" parent="CanvasLayer"]
 layout_mode = 3
 anchor_left = 0.99
 anchor_top = 0.01
@@ -18,7 +27,7 @@ anchor_right = 0.99
 anchor_bottom = 0.01
 grow_horizontal = 0
 
-[node name="VBoxContainer" type="VBoxContainer" parent="ScoreUI"]
+[node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer/ScoreUI"]
 layout_mode = 1
 anchors_preset = 1
 anchor_left = 1.0
@@ -28,38 +37,38 @@ offset_bottom = 80.0
 grow_horizontal = 0
 theme_override_constants/separation = -5
 
-[node name="ScoreLabel" type="Label" parent="ScoreUI/VBoxContainer"]
+[node name="ScoreLabel" type="Label" parent="CanvasLayer/ScoreUI/VBoxContainer"]
 layout_mode = 2
 text = "Score"
 label_settings = SubResource("LabelSettings_727f8")
 horizontal_alignment = 1
 
-[node name="ScoreAmount" type="Label" parent="ScoreUI/VBoxContainer"]
+[node name="ScoreAmount" type="Label" parent="CanvasLayer/ScoreUI/VBoxContainer"]
 layout_mode = 2
 text = "0"
 label_settings = SubResource("LabelSettings_727f8")
 horizontal_alignment = 1
 
-[node name="TimerUI" type="Control" parent="."]
+[node name="TimerUI" type="Control" parent="CanvasLayer"]
 layout_mode = 3
 anchor_left = 0.01
 anchor_top = 0.01
 anchor_right = 0.01
 anchor_bottom = 0.01
 
-[node name="VBoxContainer" type="VBoxContainer" parent="TimerUI"]
+[node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer/TimerUI"]
 layout_mode = 1
 offset_right = 125.0
 offset_bottom = 80.0
 theme_override_constants/separation = -5
 
-[node name="TimerLabel" type="Label" parent="TimerUI/VBoxContainer"]
+[node name="TimerLabel" type="Label" parent="CanvasLayer/TimerUI/VBoxContainer"]
 layout_mode = 2
 text = "Time Left"
 label_settings = SubResource("LabelSettings_727f8")
 horizontal_alignment = 1
 
-[node name="TimeAmount" type="Label" parent="TimerUI/VBoxContainer"]
+[node name="TimeAmount" type="Label" parent="CanvasLayer/TimerUI/VBoxContainer"]
 layout_mode = 2
 text = "0"
 label_settings = SubResource("LabelSettings_727f8")

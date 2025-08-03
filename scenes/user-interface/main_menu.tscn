@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=3 uid="uid://bfphjw3bk300o"]
+[gd_scene load_steps=9 format=3 uid="uid://bfphjw3bk300o"]
 
 [ext_resource type="Script" uid="uid://dibfx3mmvs40v" path="res://scenes/user-interface/main_menu.gd" id="1_ovey4"]
 [ext_resource type="FontFile" uid="uid://c4d40heitles2" path="res://fonts/good timing bd.otf" id="2_xyjik"]
@@ -10,10 +10,22 @@
 font = ExtResource("2_xyjik")
 font_size = 50
 
-[node name="MainMenu" type="CanvasLayer"]
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_xyjik"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_ovey4"]
+
+[node name="MainMenu" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
 script = ExtResource("1_ovey4")
 
-[node name="ColorRect" type="ColorRect" parent="."]
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="ColorRect" type="ColorRect" parent="CanvasLayer"]
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
@@ -21,7 +33,7 @@ grow_horizontal = 2
 grow_vertical = 2
 color = Color(0, 0, 0, 0.368627)
 
-[node name="Label" type="Label" parent="."]
+[node name="Label" type="Label" parent="CanvasLayer"]
 anchors_preset = -1
 anchor_left = 0.5
 anchor_top = 0.25
@@ -34,7 +46,7 @@ grow_horizontal = 2
 text = "Game Title!"
 label_settings = SubResource("LabelSettings_f128g")
 
-[node name="HBoxContainer" type="HBoxContainer" parent="."]
+[node name="HBoxContainer" type="HBoxContainer" parent="CanvasLayer"]
 anchors_preset = -1
 anchor_left = 0.5
 anchor_top = 0.55
@@ -48,45 +60,45 @@ grow_horizontal = 2
 grow_vertical = 2
 theme_override_constants/separation = 50
 
-[node name="Play" type="Button" parent="HBoxContainer"]
+[node name="Play" type="Button" parent="CanvasLayer/HBoxContainer"]
 layout_mode = 2
-focus_mode = 0
 theme_override_colors/font_hover_color = Color(0.545098, 0.815686, 1, 1)
 theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_colors/font_pressed_color = Color(0.362578, 0.503752, 0.852388, 1)
 theme_override_fonts/font = ExtResource("2_xyjik")
 theme_override_font_sizes/font_size = 30
+theme_override_styles/focus = SubResource("StyleBoxEmpty_xyjik")
 theme_override_styles/hover = ExtResource("3_fq3by")
 theme_override_styles/pressed = ExtResource("4_ik3rk")
 theme_override_styles/normal = ExtResource("5_4bt08")
 text = "Play"
 
-[node name="Credits" type="Button" parent="HBoxContainer"]
+[node name="Credits" type="Button" parent="CanvasLayer/HBoxContainer"]
 layout_mode = 2
-focus_mode = 0
 theme_override_colors/font_hover_color = Color(0.545098, 0.815686, 1, 1)
 theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_colors/font_pressed_color = Color(0.362578, 0.503752, 0.852388, 1)
 theme_override_fonts/font = ExtResource("2_xyjik")
 theme_override_font_sizes/font_size = 30
+theme_override_styles/focus = SubResource("StyleBoxEmpty_xyjik")
 theme_override_styles/hover = ExtResource("3_fq3by")
 theme_override_styles/pressed = ExtResource("4_ik3rk")
 theme_override_styles/normal = ExtResource("5_4bt08")
 text = "Credits"
 
-[node name="Quit" type="Button" parent="HBoxContainer"]
+[node name="Quit" type="Button" parent="CanvasLayer/HBoxContainer"]
 layout_mode = 2
-focus_mode = 0
 theme_override_colors/font_hover_color = Color(0.545098, 0.815686, 1, 1)
 theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_colors/font_pressed_color = Color(0.362578, 0.503752, 0.852388, 1)
 theme_override_fonts/font = ExtResource("2_xyjik")
 theme_override_font_sizes/font_size = 30
+theme_override_styles/focus = SubResource("StyleBoxEmpty_ovey4")
 theme_override_styles/hover = ExtResource("3_fq3by")
 theme_override_styles/pressed = ExtResource("4_ik3rk")
 theme_override_styles/normal = ExtResource("5_4bt08")
 text = "Quit"
 
-[connection signal="pressed" from="HBoxContainer/Play" to="." method="_on_play_pressed"]
-[connection signal="pressed" from="HBoxContainer/Credits" to="." method="_on_credits_pressed"]
-[connection signal="pressed" from="HBoxContainer/Quit" to="." method="_on_quit_pressed"]
+[connection signal="pressed" from="CanvasLayer/HBoxContainer/Play" to="." method="_on_play_pressed"]
+[connection signal="pressed" from="CanvasLayer/HBoxContainer/Credits" to="." method="_on_credits_pressed"]
+[connection signal="pressed" from="CanvasLayer/HBoxContainer/Quit" to="." method="_on_quit_pressed"]
