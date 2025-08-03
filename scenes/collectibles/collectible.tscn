@@ -2,18 +2,19 @@
 
 [ext_resource type="Script" uid="uid://cqc1pqa3oktlw" path="res://scenes/collectibles/collectible.gd" id="1_lb3xb"]
 
+[sub_resource type="BoxMesh" id="BoxMesh_lb3xb"]
+
 [sub_resource type="SphereShape3D" id="SphereShape3D_wahkq"]
 
-[sub_resource type="BoxMesh" id="BoxMesh_lb3xb"]
-resource_local_to_scene = true
-
-[node name="Collectible" type="Area3D"]
+[node name="Collectible" type="Node3D"]
 script = ExtResource("1_lb3xb")
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
-shape = SubResource("SphereShape3D_wahkq")
-
-[node name="Model" type="MeshInstance3D" parent="."]
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
 mesh = SubResource("BoxMesh_lb3xb")
 
-[connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[node name="Area3D" type="Area3D" parent="."]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D"]
+shape = SubResource("SphereShape3D_wahkq")
+
+[connection signal="body_entered" from="Area3D" to="." method="_on_body_entered"]

@@ -154,31 +154,31 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0)
 
 [node name="ItemSlot1" type="Node3D" parent="Shelves/Shelf1"]
 
-[node name="Marker3D" type="Marker3D" parent="Shelves/Shelf1/ItemSlot1"]
+[node name="Marker3D" type="Node3D" parent="Shelves/Shelf1/ItemSlot1"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -40.5, 0, 0)
 
 [node name="ItemSlot2" type="Node3D" parent="Shelves/Shelf1"]
 transform = Transform3D(0.996195, 0, 0.0871557, 0, 1, 0, -0.0871557, 0, 0.996195, 0, 0, 0)
 
-[node name="Marker3D" type="Marker3D" parent="Shelves/Shelf1/ItemSlot2"]
+[node name="Marker3D" type="Node3D" parent="Shelves/Shelf1/ItemSlot2"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -40.5, 0, 0)
 
 [node name="ItemSlot3" type="Node3D" parent="Shelves/Shelf1"]
 transform = Transform3D(0.984808, 0, 0.173648, 0, 1, 0, -0.173648, 0, 0.984808, 0, 0, 0)
 
-[node name="Marker3D" type="Marker3D" parent="Shelves/Shelf1/ItemSlot3"]
+[node name="Marker3D" type="Node3D" parent="Shelves/Shelf1/ItemSlot3"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -40.5, 0, 0)
 
 [node name="ItemSlot4" type="Node3D" parent="Shelves/Shelf1"]
 transform = Transform3D(0.996195, 0, -0.0871557, 0, 1, 0, 0.0871557, 0, 0.996195, 0, 0, 0)
 
-[node name="Marker3D" type="Marker3D" parent="Shelves/Shelf1/ItemSlot4"]
+[node name="Marker3D" type="Node3D" parent="Shelves/Shelf1/ItemSlot4"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -40.5, 0, 0)
 
 [node name="ItemSlot5" type="Node3D" parent="Shelves/Shelf1"]
 transform = Transform3D(0.984808, 0, -0.173648, 0, 1, 0, 0.173648, 0, 0.984808, 0, 0, 0)
 
-[node name="Marker3D" type="Marker3D" parent="Shelves/Shelf1/ItemSlot5"]
+[node name="Marker3D" type="Node3D" parent="Shelves/Shelf1/ItemSlot5"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -40.5, 0, 0)
 
 [node name="Shelf2" type="Node3D" parent="Shelves"]
@@ -186,31 +186,31 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 4.25, 0)
 
 [node name="ItemSlot1" type="Node3D" parent="Shelves/Shelf2"]
 
-[node name="Marker3D" type="Marker3D" parent="Shelves/Shelf2/ItemSlot1"]
+[node name="Marker3D" type="Node3D" parent="Shelves/Shelf2/ItemSlot1"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -40.5, 0, 0)
 
 [node name="ItemSlot2" type="Node3D" parent="Shelves/Shelf2"]
 transform = Transform3D(0.996195, 0, 0.0871557, 0, 1, 0, -0.0871557, 0, 0.996195, 0, 0, 0)
 
-[node name="Marker3D" type="Marker3D" parent="Shelves/Shelf2/ItemSlot2"]
+[node name="Marker3D" type="Node3D" parent="Shelves/Shelf2/ItemSlot2"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -40.5, 0, 0)
 
 [node name="ItemSlot3" type="Node3D" parent="Shelves/Shelf2"]
 transform = Transform3D(0.984808, 0, 0.173648, 0, 1, 0, -0.173648, 0, 0.984808, 0, 0, 0)
 
-[node name="Marker3D" type="Marker3D" parent="Shelves/Shelf2/ItemSlot3"]
+[node name="Marker3D" type="Node3D" parent="Shelves/Shelf2/ItemSlot3"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -40.5, 0, 0)
 
 [node name="ItemSlot4" type="Node3D" parent="Shelves/Shelf2"]
 transform = Transform3D(0.996195, 0, -0.0871557, 0, 1, 0, 0.0871557, 0, 0.996195, 0, 0, 0)
 
-[node name="Marker3D" type="Marker3D" parent="Shelves/Shelf2/ItemSlot4"]
+[node name="Marker3D" type="Node3D" parent="Shelves/Shelf2/ItemSlot4"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -40.5, 0, 0)
 
 [node name="ItemSlot5" type="Node3D" parent="Shelves/Shelf2"]
 transform = Transform3D(0.984808, 0, -0.173648, 0, 1, 0, 0.173648, 0, 0.984808, 0, 0, 0)
 
-[node name="Marker3D" type="Marker3D" parent="Shelves/Shelf2/ItemSlot5"]
+[node name="Marker3D" type="Node3D" parent="Shelves/Shelf2/ItemSlot5"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -40.5, 0, 0)
 
 [node name="Shelf3" type="Node3D" parent="Shelves"]
@@ -218,31 +218,31 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 7.75, 0)
 
 [node name="ItemSlot1" type="Node3D" parent="Shelves/Shelf3"]
 
-[node name="Marker3D" type="Marker3D" parent="Shelves/Shelf3/ItemSlot1"]
+[node name="Marker3D" type="Node3D" parent="Shelves/Shelf3/ItemSlot1"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -40.5, 0, 0)
 
 [node name="ItemSlot2" type="Node3D" parent="Shelves/Shelf3"]
 transform = Transform3D(0.996195, 0, 0.0871557, 0, 1, 0, -0.0871557, 0, 0.996195, 0, 0, 0)
 
-[node name="Marker3D" type="Marker3D" parent="Shelves/Shelf3/ItemSlot2"]
+[node name="Marker3D" type="Node3D" parent="Shelves/Shelf3/ItemSlot2"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -40.5, 0, 0)
 
 [node name="ItemSlot3" type="Node3D" parent="Shelves/Shelf3"]
 transform = Transform3D(0.984808, 0, 0.173648, 0, 1, 0, -0.173648, 0, 0.984808, 0, 0, 0)
 
-[node name="Marker3D" type="Marker3D" parent="Shelves/Shelf3/ItemSlot3"]
+[node name="Marker3D" type="Node3D" parent="Shelves/Shelf3/ItemSlot3"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -40.5, 0, 0)
 
 [node name="ItemSlot4" type="Node3D" parent="Shelves/Shelf3"]
 transform = Transform3D(0.996195, 0, -0.0871557, 0, 1, 0, 0.0871557, 0, 0.996195, 0, 0, 0)
 
-[node name="Marker3D" type="Marker3D" parent="Shelves/Shelf3/ItemSlot4"]
+[node name="Marker3D" type="Node3D" parent="Shelves/Shelf3/ItemSlot4"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -40.5, 0, 0)
 
 [node name="ItemSlot5" type="Node3D" parent="Shelves/Shelf3"]
 transform = Transform3D(0.984808, 0, -0.173648, 0, 1, 0, 0.173648, 0, 0.984808, 0, 0, 0)
 
-[node name="Marker3D" type="Marker3D" parent="Shelves/Shelf3/ItemSlot5"]
+[node name="Marker3D" type="Node3D" parent="Shelves/Shelf3/ItemSlot5"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -40.5, 0, 0)
 
 [node name="Shelf4" type="Node3D" parent="Shelves"]
@@ -250,29 +250,29 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 11.5, 0)
 
 [node name="ItemSlot1" type="Node3D" parent="Shelves/Shelf4"]
 
-[node name="Marker3D" type="Marker3D" parent="Shelves/Shelf4/ItemSlot1"]
+[node name="Marker3D" type="Node3D" parent="Shelves/Shelf4/ItemSlot1"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -40.5, 0, 0)
 
 [node name="ItemSlot2" type="Node3D" parent="Shelves/Shelf4"]
 transform = Transform3D(0.996195, 0, 0.0871557, 0, 1, 0, -0.0871557, 0, 0.996195, 0, 0, 0)
 
-[node name="Marker3D" type="Marker3D" parent="Shelves/Shelf4/ItemSlot2"]
+[node name="Marker3D" type="Node3D" parent="Shelves/Shelf4/ItemSlot2"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -40.5, 0, 0)
 
 [node name="ItemSlot3" type="Node3D" parent="Shelves/Shelf4"]
 transform = Transform3D(0.984808, 0, 0.173648, 0, 1, 0, -0.173648, 0, 0.984808, 0, 0, 0)
 
-[node name="Marker3D" type="Marker3D" parent="Shelves/Shelf4/ItemSlot3"]
+[node name="Marker3D" type="Node3D" parent="Shelves/Shelf4/ItemSlot3"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -40.5, 0, 0)
 
 [node name="ItemSlot4" type="Node3D" parent="Shelves/Shelf4"]
 transform = Transform3D(0.996195, 0, -0.0871557, 0, 1, 0, 0.0871557, 0, 0.996195, 0, 0, 0)
 
-[node name="Marker3D" type="Marker3D" parent="Shelves/Shelf4/ItemSlot4"]
+[node name="Marker3D" type="Node3D" parent="Shelves/Shelf4/ItemSlot4"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -40.5, 0, 0)
 
 [node name="ItemSlot5" type="Node3D" parent="Shelves/Shelf4"]
 transform = Transform3D(0.984808, 0, -0.173648, 0, 1, 0, 0.173648, 0, 0.984808, 0, 0, 0)
 
-[node name="Marker3D" type="Marker3D" parent="Shelves/Shelf4/ItemSlot5"]
+[node name="Marker3D" type="Node3D" parent="Shelves/Shelf4/ItemSlot5"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -40.5, 0, 0)

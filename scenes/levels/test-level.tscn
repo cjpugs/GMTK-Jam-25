@@ -1,9 +1,8 @@
-[gd_scene load_steps=10 format=3 uid="uid://cs1jpi12r1ya"]
+[gd_scene load_steps=9 format=3 uid="uid://cs1jpi12r1ya"]
 
 [ext_resource type="PackedScene" uid="uid://yo167f7iyygr" path="res://scenes/player/player.tscn" id="1_tny1j"]
 [ext_resource type="Script" uid="uid://y3d2gahq05fi" path="res://scenes/levels/test_level.gd" id="1_xcg81"]
 [ext_resource type="PackedScene" uid="uid://bavk5pw8cq6lh" path="res://scenes/levels/store.tscn" id="2_er0ob"]
-[ext_resource type="PackedScene" uid="uid://b4se3yrsxenvf" path="res://scenes/obstacles/security_guard.tscn" id="4_ck1ti"]
 [ext_resource type="PackedScene" uid="uid://cnmcblse6n4sp" path="res://scenes/obstacles/customer.tscn" id="4_q4av7"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_tny1j"]
@@ -43,9 +42,6 @@ transform = Transform3D(1.5, 0, 0, 0, 1.5, 0, 0, 0, 1.5, -36, 4.48879, 0)
 navigation_mesh = SubResource("NavigationMesh_xcg81")
 
 [node name="Store" parent="NavigationRegion3D" instance=ExtResource("2_er0ob")]
-
-[node name="SecurityGuard" parent="." instance=ExtResource("4_ck1ti")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -35.2216, 0, 19.2899)
 
 [node name="Customer" parent="." instance=ExtResource("4_q4av7")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -35.5229, 0, -8.30172)

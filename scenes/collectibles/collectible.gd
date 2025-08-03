@@ -1,22 +1,15 @@
-extends Area3D
+extends Node3D
+class_name Collectible
 
 @export var point_value := 100 # placeholder default score
-@export var mesh_override: Mesh
-@export_enum("Laptop") var collectible_type: String
+var collectible_meshes := [BoxMesh, CylinderMesh]
 
 func _ready() -> void:
-	if mesh_override:
-		$MeshInstance3D.mesh = mesh_override
-	
-	#var scene_path := ""
-	#match collectible_type:
-		#"Laptop": scene_path = "res://scenes/collectibles/laptop.tscn"
-	#
-	#if scene_path != "":
-		#var new_model = load(scene_path).instantiate()
-		#$Model.queue_free()
-		#add_child(new_model)
-		#new_model.name = "Model"
+	var collectible_mesh = collectible_meshes.pick_random()
+	$MeshInstance3D.mesh = collectible_mesh.new()
+	var mat := StandardMaterial3D.new()
+	mat.albedo_color = Color(randf(), randf(), randf())
+	$MeshInstance3D.material_override = mat
 
 func _on_body_entered(_body: Node3D) -> void:
 	Globals.score += point_value

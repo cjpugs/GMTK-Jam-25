@@ -48,10 +48,11 @@ data = PackedVector3Array(3.9203, -8, -39.8083, -0.0006, -8, -40, 3.9203, 8, -39
 [node name="Store" type="Node3D"]
 
 [node name="Ceiling" type="StaticBody3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, -1, -8.74228e-08, 0, 8.74228e-08, -1, 0, 22, 0)
+transform = Transform3D(1, 0, 0, 0, -1, -8.74228e-08, 0, 8.74228e-08, -1, 0, 24, 0)
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="Ceiling"]
 transform = Transform3D(100, 0, 0, 0, 100, 0, 0, 0, 100, 0, 0, 0)
+visible = false
 mesh = SubResource("PlaneMesh_m4iqm")
 surface_material_override/0 = SubResource("StandardMaterial3D_b0hbt")
 
@@ -73,18 +74,21 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 11, 0)
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="InnerWall"]
 transform = Transform3D(1.5, 0, 0, 0, 1.5, 0, 0, 0, 1.5, 0, 0, 0)
+visible = false
 mesh = SubResource("CylinderMesh_y7kff")
 surface_material_override/0 = SubResource("StandardMaterial3D_m4iqm")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="InnerWall"]
 transform = Transform3D(1.5, 0, 0, 0, 1.5, 0, 0, 0, 1.5, 0, 0, 0)
 shape = SubResource("CylinderShape3D_y7kff")
+disabled = true
 
 [node name="OuterWall" type="StaticBody3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 11, 0)
 
 [node name="OuterWallMesh" type="MeshInstance3D" parent="OuterWall"]
 transform = Transform3D(1.75, 0, 0, 0, 1.75, 0, 0, 0, 1.75, 0, 0, 0)
+visible = false
 mesh = ExtResource("1_y7kff")
 skeleton = NodePath("../..")
 surface_material_override/0 = SubResource("StandardMaterial3D_8s6uc")
